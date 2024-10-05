@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using IC_TurnUpWeb.Utilities;
+using OpenQA.Selenium;
 
 namespace IC_TurnUpWeb.Pages
 {
@@ -7,6 +8,7 @@ namespace IC_TurnUpWeb.Pages
         private readonly string url = "http://horse.industryconnect.io/";
         private readonly string userName = "hari";
         private readonly string passWord = "123123";
+
         public void LoginAction(IWebDriver driver)
         {
             //2. Open Turn Up portal

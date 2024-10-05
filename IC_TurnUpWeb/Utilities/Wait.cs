@@ -11,31 +11,31 @@ namespace IC_TurnUpWeb.Utilities
     public class Wait
     {
         //fluent wait
-        private static By GetBy(string locatorType, string locatorValue)
-        {
-            return locatorType switch
-            {
-                "Xpath" => By.XPath(locatorValue),
-                "Id" => By.Id(locatorValue),
-                "CssSelector" => By.CssSelector(locatorValue),
-                _ => throw new AggregateException($"{locatorType} Not Supported")
-            };
-        }
+        //private static By GetBy(string locatorType, string locatorValue)
+        //{
+        //    return locatorType switch
+        //    {
+        //        "Xpath" => By.XPath(locatorValue),
+        //        "Id" => By.Id(locatorValue),
+        //        "CssSelector" => By.CssSelector(locatorValue),
+        //        _ => throw new AggregateException($"{locatorType} Not Supported")
+        //    };
+        //}
 
         //Wait for clickable
-        public static void WaitToBeClickable(IWebDriver driver, string locatorType, string locatorValue, int seconds)
+        public static void WaitToBeClickable(IWebDriver driver, By locator, int seconds)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
             
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(GetBy(locatorType,locatorValue)));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(locator));
         }
 
         //Wait for visiable
-        public static void WaitToBeVisible(IWebDriver driver, string locatorType, string locatorValue, int seconds)
+        public static void WaitToBeVisible(IWebDriver driver, By locator, int seconds)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
 
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(GetBy(locatorType, locatorValue)));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator));
 
         }
 

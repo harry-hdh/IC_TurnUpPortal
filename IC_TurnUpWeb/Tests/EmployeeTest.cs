@@ -4,17 +4,18 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
+
 namespace IC_TurnUpWeb.Tests
 {
     [TestFixture]
-    internal class TMTest : ComWebDriver
+    class EmployeeTest : ComWebDriver
     {
-        TMPage tmPageObj = new TMPage();
         LoginPage loginPageObj = new LoginPage();
         HomePage homePageObj = new HomePage();
+        EmployeesPage employeesPageObj = new EmployeesPage();
 
-        private readonly By tMXPath = By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a");
         private readonly By administrationXpath = By.XPath("/html/body/div[3]/div/div/ul/li[5]/a");
+        private readonly By employeesXPath = By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[2]/a");
 
         [SetUp]
         public void SetUpSteps()
@@ -24,25 +25,31 @@ namespace IC_TurnUpWeb.Tests
             //Login
             loginPageObj.LoginAction(driver);
             //Navigate to TmPage
-            homePageObj.NavigateToPage(driver,  administrationXpath, tMXPath);
+            homePageObj.NavigateToPage(driver, administrationXpath, employeesXPath);
         }
 
-        [Test, Order(1)]
-        public void CreateTime_Test() 
+        [Test]
+        public void CreateEmployee_Test()
         {
-            tmPageObj.CreateNewRecord(driver);
+            employeesPageObj.CreateNewEmploye(driver);
         }
 
-        [Test, Order(2)]
-        public void EditTime_Test() 
+        [Test]
+        public void EditEmployee_Test()
         {
-            tmPageObj.EditRecord(driver);
+
         }
 
-        [Test, Order(3)]
-        public void DeleteTime_Test()
+        [Test]
+        public void EditEmployeeContact_Test()
         {
-            tmPageObj.DeleteRecord(driver);
+
+        }
+
+        [Test]
+        public void DeleteEmployee_Test()
+        {
+            employeesPageObj.DeleteEmployee(driver);
         }
 
         [TearDown]
@@ -50,5 +57,6 @@ namespace IC_TurnUpWeb.Tests
         {
             driver.Quit();
         }
+
     }
 }
