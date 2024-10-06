@@ -37,13 +37,13 @@ namespace IC_TurnUpWeb.Tests
         [Test]
         public void EditEmployee_Test()
         {
-
+            employeesPageObj.EditEmployee(driver);
         }
 
         [Test]
         public void EditEmployeeContact_Test()
         {
-
+            employeesPageObj.EditEmployeeContact(driver);
         }
 
         [Test]

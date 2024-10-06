@@ -12,7 +12,7 @@ namespace IC_TurnUpWeb.Pages
         private readonly By tMDropDownXpath = By.XPath("//*[@id=\"TimeMaterialEditForm\"]/div/div[1]/div/span[1]/span");
         private readonly By timeXPath = By.XPath("//*[@id=\"TypeCode_listbox\"]/li[2]");
         private readonly By priceTxtBoxXpath = By.XPath("//*[@id=\"TimeMaterialEditForm\"]/div/div[4]/div/span[1]/span/input[1]");
-        private readonly By lastPageBtnXpath = By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[4]";
+        private readonly By lastPageBtnXpath = By.XPath("//*[@id=\"tmsGrid\"]/div[4]/a[4]");
         private readonly By descResultXpath = By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[3]");
         private readonly By editBtnXpath = By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[3]/td[last()]/a[1]");
         //"//*[@id="tmsGrid"]/div[3]/div[2]/table/tbody/tr[8]/td[5]/a[1]"
